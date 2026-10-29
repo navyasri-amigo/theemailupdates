@@ -1,0 +1,59 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+:root {
+  --ink: 30 27 75;          /* #1E1B4B deep indigo */
+  --indigo: 55 48 163;      /* #3730A3 */
+  --muted: 85 82 120;       /* #555278 */
+  --coral: 255 107 87;      /* #FF6B57 */
+  --coral-deep: 200 58 38;  /* #C83A26 — coral for small text on light */
+  --peach: 255 228 222;     /* #FFE4DE */
+  --lilac: 245 243 255;     /* #F5F3FF */
+  --cream: 255 250 247;     /* #FFFAF7 */
+}
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: rgb(var(--ink));
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+::selection {
+  background: rgb(var(--coral) / 0.3);
+}
+section[id] {
+  scroll-margin-top: 88px;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+@keyframes bg-drift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(3%, -2%, 0) scale(1.05); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+.animate-drift {
+  animation: bg-drift 18s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift {
+    animation: none;
+  }
+}
